@@ -1,0 +1,24 @@
+public class GGT {
+
+    public static int ggt(int n, int m) {
+        if (n <= 0 || m <= 0) {
+            System.out.println("Ungültige Eingabe. Beide Zahlen müssen positiv sein.");
+            return -1; // Gibt -1 zurück, um anzuzeigen, dass die Eingabe ungültig ist.
+        }
+
+        while (m != 0) {
+            int temp = m;
+            m = n % m;
+            n = temp;
+        }
+
+        return n;
+    }
+
+    public static void main(String[] args) {
+        int result = ggt(36, 48); // Hier können die gewünschten Zahlen für n und m eingesetzt werden
+        if (result != -1) {
+            System.out.println("Der größte gemeinsame Teiler ist: " + result);
+        }
+    }
+}
